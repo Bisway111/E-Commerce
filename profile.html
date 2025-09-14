@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <head>
+ <div id="header">
+    <a href="#"><img src="IMAGE/Logo.png" class="logo" alt=""></a>
+    <div>
+        <ul id="navbar">
+            <li><a  href="index.html">Home</a></li>
+            <li><a href="shope.html">Shope</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a class="active" href="profile.html">Profile</a></li>
+            <li><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
+           <i id="close" class="fa-regular fa-circle-xmark"></i> </a>
+        </ul>
+    </div>
+
+    <div id="mobile">
+       <i  id = "bar" class="fa-solid fa-bars"></i>
+    </div>
+
+ </div>
+</head>
+<main>
+     <section id="page-header" class="about-header">
+
+<h2>#about_you</h2>
+
+<p>Stay Updated!</p>
+
+    </section>
+   
+    <section class="profile section-p1">
+       <div class="profile-section">
+            <div class="profile-logo">
+                <div class="logo">
+                    <img src="IMAGE/profile-photo .jpg" alt="">
+                 </div>
+                    <p>profile</p>
+                    <h2>Jhon White</h2>
+                </div>
+
+                <div class="profile-details">
+                  <h5>E-mail</h5>
+                  <h3>eeeeeee@gmai.com</h3>
+                   <h5>Phone</h5>
+                  <h3>0000000000</h3>
+                   <h5>Gender</h5>
+                  <h3>Male</h3>
+                   <h5>Address</h5>
+                  <h3>New Yourk,USA</h3>
+                   <button class="normal">Edit</button>
+                </div>
+           </div>  
+    </section> 
+    <form id="profile-popup">
+        <i class="fa-solid fa-xmark"></i>
+        <div class="photo-popup">
+            <div class="photo-popup-img">
+            <!-- <img src="IMAGE/profile-photo .jpg" alt=""> -->
+            </div>
+            <div id="photo-taker">
+                <h5>Upload your iamge</h5>
+            <input type="file" id="file-popup" accept="image/*" placeholder="Chooce an image">
+            
+            </div>
+        </div>
+        <div class="details-popup">
+            <h5>Name</h5>
+            <input type="name">
+            <h5>E-mail</h5>
+            <input type="email">
+            <h5>Password</h5>
+            <input type="text">
+            <h5>Phone Number</h5>
+            <input type="tel" id="phone" name="phone" placeholder="9876543210" pattern="[0-9]" required>
+            <h5>Gender</h5>
+            
+           <div class="gender-pop">
+             <label for="male" >
+                <input type="radio" value="male" name="gender" id="male" >Male
+             </label>
+             <label for="female" >
+                <input type="radio" value="female" name="gender" id="female" >Female
+             </label>
+            </div>
+            <h5>Address</h5>
+            <input type="text">
+        </div>
+         
+            <button id="okay-popup" class="normal">Okay</button>
+        
+    </form> 
+</main>
+<footer>
+    <section id="newLetter" class="section-p1 section-m1">
+        <div class="newstext">
+<h4>Sign Up For Newsletters</h4>
+<p>Get e-main update about our latest shop and <span>special offers</span></p>
+        </div>
+        <div class="form">
+            <div>
+            <input type="email" placeholder="Your Email Address" id="newLetter-email">
+            <button class="normal">Sign Up</button>
+            </div>
+            <p id="email-output"></p>    
+        </div>
+    </section>
+    <section id="footer"  class="section-p1" >
+        <div class="col">
+             <h4>Contact</h4>
+             <p><strong>Address: </strong> 562 Wellington Road, Street 32, San Francisco</p>
+             <p><strong>Phone: </strong> +01 2222 365</p>
+             <p><strong>Hours: </strong>10:00 - 18:00 , Mon - Sat</p>
+             <div class="follow">
+                 <h4>Follow us</h4>
+                 <div class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-pinterest-p"></i>
+                    <i class="fab fa-youtube"></i>
+                 </div>
+             </div>
+        </div>
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About Us</a>
+              <a href="#">Delivery Information</a>
+              <a href="#"> Privacy Policy</a>
+              <a href="#">Terms & Condition</a>
+              <a href="#">Contact Us</a>
+        </div>
+         <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign in</a>
+              <a href="#">View Cart</a>
+              <a href="#">My Wishlist</a>
+              <a href="#">Track My Order</a>
+              <a href="#">Help</a>
+        </div>
+        <div class="col install">
+          <h4>Install App</h4>
+          <p>From App Store or Google Play</p>
+          <div class="row">
+            <img src="IMAGE/pay/app.jpg" alt="">
+            <img src="IMAGE/pay/play.jpg" alt="">
+          </div>
+          <p>Secured Payment Gateways</p>
+          <img src="IMAGE/pay/pay.png" alt="">
+        </div>
+        <div class="copyright">
+            <p><i class="fa-regular fa-copyright"></i>2025 STAR. All Rights Reserved. Made with love<i class="fa-solid fa-heart"></i></p>
+        </div>
+    </section>
+</footer>
+ <script src="script.js"></script>
+  <script src="product.js"></script>
+  <script src="popUpScript.js"></script>
+</body>
+</html>
