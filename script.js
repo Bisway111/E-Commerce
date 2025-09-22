@@ -5,7 +5,7 @@ const sbtn = document.querySelector("#shopBtn");
 
 
 //// making shope working to redirect to shop page 
-//first check if true then run otherwise it give a erron and rest of the code will not run and that make hamburgernot working 
+//first check if true then run otherwise it give a erron and rest of the code will not run and that make hamburger not working 
 if(sbtn){
 
 sbtn.addEventListener("click",()=>{

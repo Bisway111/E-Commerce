@@ -19,7 +19,7 @@
             <li><a href="blog.html">Blog</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a class="active" href="profile.html">Profile</a></li>
+            <li><a class="active" href="profile.html" id="profile-link">Profile</a></li>
             <li><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
            <i id="close" class="fa-regular fa-circle-xmark"></i> </a>
         </ul>
@@ -47,19 +47,24 @@
                     <img src="IMAGE/profile-photo .jpg" alt="">
                  </div>
                     <p>profile</p>
-                    <h2>Jhon White</h2>
+                    <h2 id="pro-name"></h2>
                 </div>
 
                 <div class="profile-details">
                   <h5>E-mail</h5>
-                  <h3>eeeeeee@gmai.com</h3>
+                  <h3 id="pro-email"></h3>
                    <h5>Phone</h5>
-                  <h3>0000000000</h3>
+                  <h3 id="pro-phone"></h3>
                    <h5>Gender</h5>
-                  <h3>Male</h3>
+                  <h3 id="pro-gender"></h3>
                    <h5>Address</h5>
-                  <h3>New Yourk,USA</h3>
-                   <button class="normal">Edit</button>
+                  <h3 id="pro-address"></h3>
+                  <div class="button">
+                      <button class="normal" id="edit">Edit</button>
+                      <button class="normal" id="logout">Log Out</button>
+                      <button class="normal" id="deleteaccount">Delete Account</button>
+                 </div>
+                   </div>
                 </div>
            </div>  
     </section> 
@@ -77,28 +82,28 @@
         </div>
         <div class="details-popup">
             <h5>Name</h5>
-            <input type="name">
-            <h5>E-mail</h5>
-            <input type="email">
-            <h5>Password</h5>
-            <input type="text">
+            <input type="name" id="nameEdit">
+            <!-- <h5>E-mail</h5>
+            <input type="email" id="emailEdit"> -->
+            <!-- <h5>Password</h5>
+            <input type="password" id="passwordEdit"> -->
             <h5>Phone Number</h5>
-            <input type="tel" id="phone" name="phone" placeholder="9876543210" pattern="[0-9]" required>
+            <input type="tel" id="phoneEdit" name="phone" placeholder="9876543210" pattern="[0-9]{10}" required>
             <h5>Gender</h5>
             
            <div class="gender-pop">
              <label for="male" >
-                <input type="radio" value="male" name="gender" id="male" >Male
+                <input type="radio" value="Male" name="gender" id="male" >Male
              </label>
              <label for="female" >
-                <input type="radio" value="female" name="gender" id="female" >Female
+                <input type="radio" value="Female" name="gender" id="female" >Female
              </label>
             </div>
             <h5>Address</h5>
-            <input type="text">
+            <input type="text" id="addressEdit">
         </div>
          
-            <button id="okay-popup" class="normal">Okay</button>
+            <button  type="submit" id="okay-popup" class="normal">Okay</button>
         
     </form> 
 </main>
@@ -135,19 +140,19 @@
         </div>
         <div class="col">
             <h4>About</h4>
-            <a href="#">About Us</a>
+            <a href="about.html">About Us</a>
               <a href="#">Delivery Information</a>
               <a href="#"> Privacy Policy</a>
               <a href="#">Terms & Condition</a>
-              <a href="#">Contact Us</a>
+              <a href="contact.html">Contact Us</a>
         </div>
          <div class="col">
             <h4>My Account</h4>
             <a href="#">Sign in</a>
-              <a href="#">View Cart</a>
+              <a href="cart.html">View Cart</a>
               <a href="#">My Wishlist</a>
               <a href="#">Track My Order</a>
-              <a href="#">Help</a>
+              <a href="contact.html">Help</a>
         </div>
         <div class="col install">
           <h4>Install App</h4>
@@ -167,5 +172,7 @@
  <script src="script.js"></script>
   <script src="product.js"></script>
   <script src="popUpScript.js"></script>
+  <script type="module" src="signUp.js"></script>
+  <script type="module" src="crud.js"></script>
 </body>
 </html>

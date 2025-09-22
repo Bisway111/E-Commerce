@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="signUp.css">
 </head>
 <body>
-    <form id="profile-popup">
-        <i class="fa-solid fa-xmark"></i>
+    <form id="sign-Up">
+        
         <div class="photo-popup">
             <div class="photo-popup-img">
             <!-- <img src="IMAGE/profile-photo .jpg" alt=""> -->
@@ -21,17 +21,16 @@
         </div>
         <div class="details-popup">
             <h5>Name</h5>
-            <input type="name">
+            <input type="name" id="signup-name">
             <h5>E-mail</h5>
-            <input type="email">
+            <input type="email" id="signup-email">
             <h5>Password</h5>
-            <input type="text">
+            <input type="password" id="signup-password">
             <h5>Phone Number</h5>
-            <input type="tel" id="phone" name="phone" placeholder="9876543210" pattern="[0-9]" required>
-        </div>
-         
-            <button id="okay-popup" class="normal">Sign Up</button>
-        
+            <input type="tel" id="signup-phone"  pattern="[0-9]{10}" required>
+        </div>     
+            <button type="submit" id="signup-okay" class="normal">Sign Up</button>     
     </form> 
+    <script type="module" src="signUp.js"></script>
 </body>
 </html>

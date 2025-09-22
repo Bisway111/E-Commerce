@@ -24,7 +24,7 @@
             <li><a href="blog.html">Blog</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="profile.html">Profile</a></li>
+            <li><a href="profile.html" id="profile-link">Profile</a></li>
             <li><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
             <i id="close" class="fa-regular fa-circle-xmark"></i>
         </ul>
@@ -47,27 +47,27 @@
     <section id="feature" class="section-p1">
         <div class="fe-box">
           <img src="IMAGE/features/f1.png" alt="">
-          <H6>Free Shipping</H6>
+          <a href="#"><H6>Free Shipping</H6></a>
         </div>
         <div class="fe-box">
           <img src="IMAGE/features/f2.png" alt="">
-          <H6>Online Order</H6>
+          <a href="#"></a><H6>Online Order</H6></a>
         </div>
          <div class="fe-box">
           <img src="IMAGE/features/f3.png" alt="">
-          <H6>Save Money</H6>
+         <a href="#"> <H6>Save Money</H6></a>
         </div>
          <div class="fe-box">
           <img src="IMAGE/features/f4.png" alt="">
-          <H6>Promotions</H6>
+         <a href="#"> <H6>Promotions</H6></a>
         </div>
          <div class="fe-box">
           <img src="IMAGE/features/f5.png" alt="">
-          <H6>happr Sell</H6>
+         <a href="#"> <H6>happr Sell</H6></a>
         </div>
          <div class="fe-box">
           <img src="IMAGE/features/f6.png" alt="">
-          <H6>F24/7 Support</H6>
+          <a href="contact.html"><H6>F24/7 Support</H6></a>
         </div>
     </section>
      <section id="product1" class="section-p1" >
@@ -396,19 +396,20 @@
         </div>
         <div class="col">
             <h4>About</h4>
-            <a href="#">About Us</a>
+            <a href="about.html">About Us</a>
               <a href="#">Delivery Information</a>
               <a href="#"> Privacy Policy</a>
               <a href="#">Terms & Condition</a>
-              <a href="#">Contact Us</a>
+              <a href="contact.html">Contact Us</a>
         </div>
+
          <div class="col">
             <h4>My Account</h4>
             <a href="#">Sign in</a>
-              <a href="#">View Cart</a>
+              <a href="cart.html">View Cart</a>
               <a href="#">My Wishlist</a>
               <a href="#">Track My Order</a>
-              <a href="#">Help</a>
+              <a href="contact.html">Help</a>
         </div>
         <div class="col install">
           <h4>Install App</h4>
@@ -430,5 +431,7 @@
  <script src="script.js"></script>
   <script src="product.js"></script>
   <script src="popUpScript.js"></script>
+  <script type="module" src="crud.js"></script>
+  <script type="module" src="signUp.js"></script>
 </body>
 </html>

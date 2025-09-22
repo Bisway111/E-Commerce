@@ -4,7 +4,7 @@ const formpop = document.querySelector("#profile-popup");
 const cross = document.querySelector(".fa-xmark");
 const newsletterbutton = document.querySelector("#newLetter button");
 let successpop = document.querySelector(".success-popUp");
-const editbtn = document.querySelector(".profile-details button");
+const editbtn = document.querySelector("#edit");
 const newLetterEmail = document.querySelector("#newLetter-email");
 const emailOutput = document.querySelector("#email-output");
 //newsletter button
@@ -54,6 +54,7 @@ fileImage.addEventListener("change",()=>{
     }
 })
 }
+
 if(editbtn){
 editbtn.addEventListener("click",()=>{  
 formpop.classList.add("active");
