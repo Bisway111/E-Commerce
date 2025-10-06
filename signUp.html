@@ -4,21 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="signUp.css">
+    
+
 </head>
 <body>
     <form id="sign-Up">
-        
-        <div class="photo-popup">
-            <div class="photo-popup-img">
-            <!-- <img src="IMAGE/profile-photo .jpg" alt=""> -->
-            </div>
             <div id="photo-taker">
-                <h5>Upload your iamge</h5>
-            <input type="file" id="file-popup" accept="image/*" placeholder="Chooce an image">
-            
+                <h5>Create Your Profile</h5>
             </div>
-        </div>
+        
         <div class="details-popup">
             <h5>Name</h5>
             <input type="name" id="signup-name">
@@ -31,6 +27,6 @@
         </div>     
             <button type="submit" id="signup-okay" class="normal">Sign Up</button>     
     </form> 
-    <script type="module" src="signUp.js"></script>
+    <script type="module" src="firebase-logics/signUp.js"></script>
 </body>
 </html>

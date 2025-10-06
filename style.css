@@ -445,7 +445,7 @@ border: 1px solid #088178;
 #newLetter input{
     height: 3.125rem;
     padding: 0 1.25rem;
-    font-size: 14px;
+    font-size: 18px;
     width: 100%; 
     border: 1px solid transparent ;
     border-radius: 4px;
@@ -946,18 +946,19 @@ font-size:13px ;
     align-items: center;
     /* justify-content: center; */
 }
-.profile-logo .logo{ 
-   background-size: cover;
+.profile-logo #logo{ 
    margin-top: 20px;
+   background-image: url("IMAGE/profile-photo .jpg");
+   background-size: cover;
+   background-position: center;
+   border:2px solid #e1e1e1;
+   border-radius: 50%;
+   height: 12vh;
+   width: 12vh;
+   box-shadow: 0px 1px 20px 2px rgba(0, 0, 0, 0.2);
    
 }
-.profile-logo .logo img{
-    border:2px solid #e1e1e1;
-    border-radius: 50%;
-    height: 12vh;
-    width: 12vh;
-    box-shadow: 0px 1px 20px 2px rgba(0, 0, 0, 0.2);
-}
+
 .profile-logo p{
    padding:0;
    margin: 0;
@@ -1022,7 +1023,7 @@ main{
     align-items: center;
     border:1px solid #e1e1e1 ;
     width: 40%;
-    height: 95%;
+    height: 85%;
     position: fixed;
     background-color: #ffffff;
     top: 50%;
@@ -1030,8 +1031,9 @@ main{
     transform: translate(-50%,-50%);
     box-shadow: 0px 13px 20px 5px rgba(0, 0, 0, 0.2);
     visibility: hidden;
-    z-index: 10000;
+    z-index: 1000;
     border-radius: 3px;
+    
     
     
 }
@@ -1040,6 +1042,7 @@ main{
 }
 #profile-popup .photo-popup{
    display: flex;
+
    flex-direction: column;
    width: 20vw;
    height: 25vh;
@@ -1049,8 +1052,8 @@ main{
 
 }
 .photo-popup-img{
-    height: 14vh;
-    width: 14vh;
+    height: 12vh;
+    width: 12vh;
     border: 2px solid #e1e1e1  ;
     border-radius:50%;
     background-image: url("IMAGE/profile-photo .jpg");
@@ -1058,17 +1061,11 @@ main{
     background-position: center;
     box-shadow: 0px 1px 20px 2px rgba(0, 0, 0, 0.2);
 }
-/* .photo-popup-img img{
-    height: 14vh;
-    width: 14vh;
-    border-radius: 50%;
-    padding-top: 10px;
-    
-} */
+
 #photo-taker{
     padding-left: 4rem;
     padding-top: 1rem;
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
 }
 #photo-taker h5{
     padding-left: 2rem;
@@ -1078,7 +1075,7 @@ main{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-top: 2vh;
+    
     
 }
 .details-popup input{
@@ -1098,9 +1095,9 @@ main{
 }
 .gender-pop{
     display: flex;
-   gap: 2rem;
+    gap: 2rem;
     margin-top: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 .gender-pop label{
     display: flex;
@@ -1114,48 +1111,249 @@ main{
 }
 
 #okay-popup{
+     margin-top: 0.5rem;
     background-color: #088178;
-    color: #fff;;
+    color: #fff;
 }
 .fa-xmark{
     padding-left: 36vw;
     padding-top: 1vh;
 }
-/* success popup */
-.success-popUp{
+/* New Adds  */
+/* add product */
+#add-div{
+    width: 100%;
+    border: 1px solid #e1e1e1;
+    background-color: #ffffff;
+    box-shadow: 0px 1px 20px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    
+}
+#add-div-start{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+    width: 100%;
+    padding: 0 1.25rem 0 2.5rem;
+    
+}
+#add-div-start i{
+    transition: transform 0.3s ease;
+}
+.rotate{
+    transform: rotate(180deg);
+}
+#add-div-product{
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 1rem;
+    transition: max-height 0.5s ease;
+    box-sizing:content-box;
+}
+#add-div-product-inner{
+   overflow-x: auto; 
+   margin-bottom: 2rem;
+}
+#add-div-product.open{
+   padding: 1rem; 
+}
+
+#product-table td,th{
+    text-align: center;
+    vertical-align: middle;
+    padding: 0.7rem;
+}
+#product-table th{
+    border: 1px solid #e2e9e1;
+    border-left: none;
+    border-right:none;
+    font-size: 0.88rem;
+    font-weight: 575;
+    text-transform: uppercase;
+}
+
+#product-table{
+width: 100%;
+table-layout: fixed;
+border-collapse: collapse;
+margin-bottom: 1rem;
+border: 1px solid #e2e9e1;
+border-left: none;
+border-right:none;
+}
+
+#product-table input{
+    width: 100%;
+    padding: 0.4rem;
+    box-sizing: border-box;
+    border:1px solid #ccc ;
+    border-radius: 5px;
+    outline: none;
+    font-size:0.9rem ;
+    
+}
+#product-table th:nth-child(1),
+#product-table td:nth-child(1){
+    width: 5rem;
+}
+#product-table th:nth-child(2),
+#product-table td:nth-child(2){
+   width: 10rem;
+}
+#product-table th:nth-child(3),
+#product-table td:nth-child(3),
+#product-table th:nth-child(4),
+#product-table td:nth-child(4),
+#product-table th:nth-child(5),
+#product-table td:nth-child(5),
+#product-table th:nth-child(6),
+#product-table td:nth-child(6){
+    width: 9rem;
+}
+#product-table th:nth-child(7),
+#product-table td:nth-child(7){
+    width: 7rem;
+}
+
+#product-table i{
+    font-size: 1rem;
+    color: rgba(255, 0, 0, 0.6);
+    cursor: pointer;
+}
+#add-row{
+    
+    background-color: #088178;
+    color: #fff;
+}
+#add-product{
+    margin-left: 1rem;
+    background-color: #088178;
+    color: #fff;
+
+}
+/* add admin */
+
+#add-admin{
+    margin-top: 2rem ;
+    display: flex;
+    justify-content: flex-start;
+    box-sizing:content-box;
+    align-items: center;
+}
+#add-admin input{
+    height: 2.9rem;
+    width: 14rem;
+    outline: none;
+    border:1px solid #ccc ;
+    border-radius: 4px;
+    margin-right: 4rem;
+    padding-left: 0.5rem;
+    font-size: 0.9rem;
+}
+#user-role{
+    height: 2.9rem;
+    width: 9rem;
+    outline: none;
+    border:1px solid #ccc ;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding-left:  10px;
+    margin-right: 4rem;
+
+}
+#add-new-admin{
+    background-color: #088178;
+    color: #fff;
+}
+
+/* Loader */
+.loader-overlay{
     position: fixed;
-    height: 10vh;
-    width: 15vw;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0,0.6);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    z-index: 1100;
+    visibility: hidden;
+}
+.loader{
+    height: 4rem;
+    width: 4rem;
+    border: 8px solid #f3f3f3 ;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    animation: loader 1s linear  infinite ;
+}
+@keyframes loader {
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+    
+}
+/* success popup */
+.success-popUp {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
     display: flex;
     justify-content: center;
     align-items: center;
-    top: 25vh;
-    left: 40vw;
-    border: 2px solid #e1e1e1 ;
+    padding: 1rem 1rem;
     background-color: #ffffff;
-    border-radius: 8px;
-     box-shadow: 0px 13px 20px 5px rgba(0, 0, 0, 0.2);
-    transition: opacity 0.4s ease, transform 0.4s ease;
-    transform: scale(0);
-     visibility: hidden;
-}
-.success-popUp img{
-    width: 2.5rem;height: 1.5rem;
-    background-color: #ffffff;
-}
-.success-popUp h2{
-    font-size: 20px;
-    line-height: 20px;
-    color: black;
-    padding-left: 8px;
-    /* background-color: #ffffff; */
-    background: transparent;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 9999;
+    min-width: 250px;
+    max-width: 90vw;
 }
 
-.success-popUp.active{
+.success-popUp.active {
     visibility: visible;
-    transform: scale(1.2);
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
 }
+
+
+
+.success-popUp h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2e7d32; /* nice green color */
+    margin: 0;
+    line-height: 1.2;
+}
+
+
+.success-popUp img {
+    width: 2.5rem;height: 1.5rem; background-color: #ffffff;
+    animation: popIn 0.5s ease forwards;
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    70% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 /* Start Media Query */
 
  @media(max-width:799px){

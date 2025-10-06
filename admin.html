@@ -85,10 +85,7 @@
         <div class="details-popup">
             <h5>Name</h5>
             <input type="name" id="nameEdit">
-            <!-- <h5>E-mail</h5>
-            <input type="email" id="emailEdit" >
-            <h5>Password</h5>
-            <input type="password" id="passwordEdit"> -->
+           
             <h5>Phone Number</h5>
             <input type="tel" id="phoneEdit" name="phone" pattern="[0-9]{10}">
             <h5>Gender</h5>
@@ -110,6 +107,55 @@
             <button  type="submit" id="okay-popup" class="normal">Okay</button>
         
     </form> 
+    <section id="new-add" class="section-p1 section-m1">
+        <div id="add-div">
+            <div id="add-div-start">
+             <H4>ADD'S</H4>
+             <i class="fa-solid fa-angle-down arrow-rotate"></i>
+            </div>
+            <div id="add-div-product">
+                <div id="add-div-product-inner">
+                <table id="product-table">
+                    <thead>
+                        <tr>
+                            <th>Remove</th>
+                            <th>Image</th>
+                            <th>Product Name</th>
+                            <th>Brand</th>
+                            <th>Category</th>
+                            <th>Discription</th>
+                            <th>Price</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><i class="fa-regular fa-circle-xmark deleteRow"></i></td>
+                            <td><input type="file"></td>
+                            <td><input type="text" placeholder="Enter Product Name"></td>
+                            <td><input type="text" placeholder="Enter Brand Name"></td>
+                            <td><input type="text" placeholder="Enter Category"></td>
+                            <td><input type="feild" placeholder="Enter Discription" ></td>
+                            <td><input type="number" placeholder="Enter Price"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button id="add-row" class="normal">+Add row</button>
+                <button id="add-product" class="normal">Add product</button>
+                </div>
+                <hr>
+                <div id="add-admin">
+                    <input type="email" placeholder="Enter email">
+                    <select name="role" id="user-role">
+                     <option value=""  selected>Select role</option>
+                     <option value="admin">Admin</option>
+                     <option value="editor">Editor</option>
+                    </select>
+                    <button class="normal" id="add-new-admin">Create Admin</button>
+                </div>
+            </div>
+        </div>
+    </section>
     
 </main>
 <footer>

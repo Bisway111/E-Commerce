@@ -7,6 +7,8 @@
  * See a full list of supported triggers at https://firebase.google.com/docs/functions
  */
 
+//  const {onCall} = require("firebase-functions/v2/https");
+
 const {setGlobalOptions} = require("firebase-functions");
 const {onRequest} = require("firebase-functions/https");
 const logger = require("firebase-functions/logger");
