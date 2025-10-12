@@ -1,3 +1,6 @@
+import {setUserRole} from "./firebase-logics/createRole.js";
+import{createProducts} from "./firebase-logics/createProducts.js";
+import { showLoader,hideLoader } from "../popUpScript.js";
 const bar = document.querySelector("#bar");
 const nav = document.querySelector("#navbar");
 const cenncel = document.querySelector("#close");
@@ -29,10 +32,11 @@ cenncel.addEventListener("click",()=>{
 ////making arrow working (for a arrow the class name should be arrow-rotate. it's globle here)
 const rotate = document.querySelector(".arrow-rotate");
 const content = document.querySelector("#add-div-product");
+const addsDiv = document.querySelector("#add-div-start");
 
-if(rotate){
-    rotate.addEventListener("click",()=>{
-console.log("arrow clicked");
+if(addsDiv){
+    addsDiv.addEventListener("click",()=>{
+
 if(content.style.maxHeight){
     content.style.maxHeight = null;
     content.classList.remove("open");
@@ -88,39 +92,62 @@ tablebody.addEventListener("click",(e)=>{
 const addProduct = document.querySelector("#add-product");
 
 if(addProduct){
-    addProduct.addEventListener("click",()=>{
-        console.log("add product clicked")
+    addProduct.addEventListener("click",async()=>{
+      showLoader();
+      document.body.style.overflow = "hidden";
         const rows = document.querySelectorAll("#product-table tbody tr");
-        let product=[];
+        try{
+            if(rows.length!==0){
+                console.log("add Product");
+                  const result =  await createProducts(rows);
+                  console.log(result);
+                  alert(result);
+                  hideLoader();
+                  document.body.style.overflow = "auto";
+                  
+            }else{
+                alert("⚠️ No products to add!");
+                hideLoader();
+                document.body.style.overflow = "auto";
+            }
 
-        rows.forEach((row)=>{
-          const inputs = row.querySelectorAll("input");
-          product.push({
-            image: inputs[0].value,
-            productName: inputs[1].value,
-            brandName: inputs[2].value,
-            category: inputs[3].value,
-            Discription: inputs[4].value,
-            Price: inputs[5].value
-          })
-        })
-        alert("Product added");
-        console.log(product);
+        }catch(error){
+          alert(error);
+          hideLoader();
+          document.body.style.overflow = "auto";
+        }
+
+       
+        
     })
 }
 
+//making admin
+
 const addAdmin = document.querySelector("#add-new-admin");
 if(addAdmin){
-    addAdmin.addEventListener("click",()=>{
-        const adminEmail = document.querySelector("#add-admin input").value;
+    addAdmin.addEventListener("click",async(e)=>{     
+    e.preventDefault();
+    showLoader();
+    document.body.style.overflow = "hidden";
+ 
+        const adminEmail = document.querySelector("#add-admin input").value.trim();
         const adminRole = document.querySelector("#user-role").value;
-        if(adminEmail!=="" && adminRole){
-            alert(`${adminEmail} is now a ${adminRole}`);
+       try{
+        if(adminEmail && /\S+@\S+\.\S+/.test(adminEmail) && adminRole){
+           const result = await setUserRole(adminEmail , adminRole );
+           alert(result.data.message);
+           hideLoader();
         }else{
-            alert("Invalid Request");
-        }
+            alert("Invalid Input");
+            hideLoader();
+            document.body.style.overflow = "auto";
+        }    
+       }catch(error){
+        alert( error);
+        hideLoader();
+        document.body.style.overflow = "auto";
+       }
         
-       
-
     })
 }

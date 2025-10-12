@@ -24,17 +24,18 @@ const proimage = document.querySelector("#logo");
 
 authStateListener(async (user)=>{
 
+
 if(user){
   try{
     const userRef = doc(db,"users",user.uid);
     const userData = await getDoc(userRef);
     if(userData.exists()){
     const data = userData.data();
-
+      const roles = data.role;
       proimage.style.backgroundImage = data.profileImage ? `url(${data.profileImage})` : `url("IMAGE/profile-photo .jpg")`;
       
 
-      proname.textContent = data.name;
+      (roles==="admin" || roles==="editor") ? proname.textContent = `${roles} - ${data.name}` : proname.textContent = data.name;
   
       proemail.textContent = data.email;
     

@@ -78,7 +78,8 @@ if(googleAuth){
       alert("✅ Login with Google, "+user.displayName);
       const userref = doc(db,"users",user.uid);
       const userdata = await getDoc(userref);
-       //check if user is already exists
+      
+      //check if user is already exists
 
       if(!userdata.exists()){
          await setDoc(doc(db,"users",user.uid),{
@@ -189,13 +190,26 @@ alert(`❌ Error: ${error.message}`)
 const profileLink = document.querySelector("#profile-link");
 if(profileLink){
 authStateListener((user) =>{
-  profileLink.addEventListener("click",(e)=>{
+  profileLink.addEventListener("click",async(e)=>{
     e.preventDefault();
     if(user){
+    const Token = await user.getIdTokenResult();
+     const Admin = Token.claims.admin;
+     const Editor = Token.claims.editor;
+     
+     if(Admin || Editor){
+      
+      window.location.href= "admin.html";
+
+    }else if(user){
+
         window.location.href= "profile.html";
-    }else{
+    }
+    } else{
+      
         window.location.href= "login.html";
     }
+    
   })
   
 
