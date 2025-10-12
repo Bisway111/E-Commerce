@@ -559,7 +559,7 @@ font-weight: 400;
 #pagination{
     text-align: center;
 }
-#pagination a{
+#pagination button{
     text-decoration: none;
     background-color: #088178;
     padding: 15px 20px;

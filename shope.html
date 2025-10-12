@@ -18,7 +18,7 @@
             <li><a href="blog.html">Blog</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
-             <li><a href="profile.html">Profile</a></li>
+             <li><a href="profile.html" id="profile-link">Profile</a></li>
             <li><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
             <i id="close" class="fa-regular fa-circle-xmark"></i>
             
@@ -40,7 +40,7 @@
 
     </section>
     <section id="product1" class="section-p1" >
-         <div class="pro-container">
+         <div class="pro-container" id="product-container" >
               <div class="pro">
                   <img src="IMAGE/products/f1.jpg" alt="">
                   <div class="des">
@@ -286,9 +286,13 @@
          </div>
      </section>
      <section id="pagination" class="section-p1">
-        <a href="#">1</a>
+          <div id="pagination-nav">
+                <button id="prev-page" class="normal" disabled><i class="fa-solid fa-arrow-left"></i>Previous</i></button>
+                 <button id="next-page" class="normal" >Next <i class="fa-solid fa-arrow-right"></i></button>
+         </div>
+        <!-- <a href="#">1</a>
         <a href="#">2</a>
-        <a href="#"><i class="fa-solid fa-arrow-right"></i></a>
+        <a href="#"><i class="fa-solid fa-arrow-right"></i></a> -->
      </section>
 
 </main>
@@ -354,8 +358,13 @@
         </div>
     </section>
 </footer>
- <script type="module" src="script.js"></script>
+
+  <script type="module" src="script.js"></script>
   <script type="module" src="product.js"></script>
   <script type="module" src="popUpScript.js"></script>
+  <script type="module" src="./pagination.js"></script>
+  <script type="module" src="./paginationNav.js"></script>
+  <script type="module" src="firebase-logics/crud.js"></script>
+  <script type="module" src="firebase-logics/signUp.js"></script>
 </body>
 </html>
