@@ -10,9 +10,11 @@
  const {onCall,HttpsError} = require("firebase-functions/v2/https");
 
 const {setGlobalOptions} = require("firebase-functions");
+const functions = require("firebase-functions");
 const {onRequest} = require("firebase-functions/https");
 const logger = require("firebase-functions/logger");
 const admin = require("firebase-admin");
+const nodemailer = require("nodemailer");
  
 admin.initializeApp();
 
@@ -65,3 +67,75 @@ throw new HttpsError("internal", "User not found or cannot assign role: " + erro
 
 
 })
+
+//Automatic email sending 
+const transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: "singhabis190@gmail.com",
+    pass:"onvn oqvj zlsg wtkg"
+  }
+});
+
+   //send email for user create 
+   exports.sendWelcomeEmail = functions.firestore
+  .document("users/{userId}")
+  .onCreate(async (snap, context)=>{
+    const user =snap.data;
+    if(!user || !user.email)return;
+
+    const mailOptions={
+      from: "EUROCLOTH<singhabis190@gmail.com>",
+      to: user.email,
+      subject: "Welcome to Our EUROCLOTH Website!",
+      html:`<h1>Hello ${user.name || "User"}!</h1>
+      <p>Thank you for creating an account on our website.</p>`
+    };
+     try{
+        await transporter.sendMail(mailOptions);
+      }catch(error){
+       console.error("Error sending welcome email:", error);
+      }
+
+   });
+   // send email for order confirm
+   exports.sendOrderConfirmEmail = functions.firestore
+  .document("users/{userId}/orders/{orderId}")
+  .onCreate(async (snap, context) => {
+    const order = snap.data;
+    if(!order || !order.email) return;
+
+    const mailOptions ={
+       from: "EUROCLOTH<singhabis190@gmail.com>",
+       to: order.email,
+       subject: `Order #${order.id || ""} Confirmation`,
+       html: `<h1>Thank you for your order!</h1>
+           <p>Order #${order.id || ""} has been confirmed and you will get this order in some days.Thank you for choosing as.</p>`,
+    };
+    try{
+      await transporter.sendMail(mailOptions);
+    }catch(error){
+      console.log("Error sending order email:",error)
+    }
+    
+   });
+  // send email for contact
+   exports.sendContactEmail = functions.firestore
+  .document("contacts/{contactId}")
+  .onCreate(async (snap, context)  => {
+    const contact = snap.data;
+    if(!contact || !contact.email)return ;
+    const mailOptions={
+       from: "EUROCLOTH<singhabis190@gmail.com>",
+       to: contact.email,
+       subject: "We Received your Message",
+       html: `<h1>Hello ${contact.name || "User"}!</h1>
+           <p>Thank you for contacting us. We will try to resolve your query.</p>`,
+    };
+    try{
+      await transporter.sendMail(mailOptions);
+
+    }catch(error){
+      console.error("Error sending contact email:", error);
+    }
+   });
