@@ -5,14 +5,16 @@ const prevBtn = document.querySelector("#prev-page");
 
 let currentPage = 1;
 let hasNext=true;
-
+if(nextBtn){
 nextBtn.addEventListener("click",async()=>{
     if(hasNext){
         currentPage++;
         await loadPage(true);
     }
 });
+}
 
+if(prevBtn){
 prevBtn.addEventListener("click",async()=>{
     if(currentPage>1){
         currentPage--;
@@ -20,6 +22,8 @@ prevBtn.addEventListener("click",async()=>{
 
     }
 });
+}
+
 
 document.addEventListener("pageLoaded",(e)=>{
 const {currentPage:page, hasNext:next} = e.detail;

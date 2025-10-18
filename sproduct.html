@@ -20,7 +20,7 @@
             <li><a href="blog.html">Blog</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="profile.html">Profile</a></li>
+            <li><a href="profile.html" id="profile-link">Profile</a></li>
             <li><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
            <i id="close" class="fa-regular fa-circle-xmark"></i> </a>
         </ul>
@@ -35,7 +35,7 @@
 <main>
      <section id ="prodetails" class="section-p1">
         <div class="single-pro-image">
-            <img src="IMAGE/products/f1.jpg"  width="100%" id="MainImg">
+            <img src=""  width="100%" id="MainImg">
             
             <div class="small-img-group">
                 <div class="small-img-col">
@@ -54,7 +54,7 @@
         </div>
         <div class="single-pro-deatils">
             <h6>Home / T-Shirt</h6>
-            <span>Nike</span>
+            <span id="brandName">Nike</span>
             <h4>Men's Fashion T Shirt</h4>
             <div class="star">
                             <i class="fas fa-star"></i>
@@ -70,17 +70,17 @@
                 <option value="">XXL</option>
                 <option value="">Large</option>
             </select>
-            <input type = "number" value="1">
-            <button class=" normal">Add To Cart</button>
+            <input id="quantity" type = "number" value="1" min="1">
+            <button class=" normal" id="add-to-cart">Add To Cart</button>
             <h4>Product Details</h4>
-            <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem natus magnam perferendis voluptatibus placeat voluptas repellendus ratione vel! Velit vitae voluptatum quae reprehenderit corporis amet similique fugiat veritatis suscipit omnis.</span>
+            <span id="descriptions">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem natus magnam perferendis voluptatibus placeat voluptas repellendus ratione vel! Velit vitae voluptatum quae reprehenderit corporis amet similique fugiat veritatis suscipit omnis.</span>
 
         </div>
      </section>
 
      <section id="product1" class="section-p1" >
           <h2>Featured Product</h2>
-          <p>Summer Collection New Morden Design</p>
+          <p id="featured-product-category">Summer Collection New Morden Design</p>
          <div class="pro-container">
               <div class="pro">
                   <img src="IMAGE/products/n1.jpg" alt="">
@@ -179,17 +179,17 @@
         <div class="col">
             <h4>About</h4>
             <a href="about.html">About Us</a>
-              <a href="#">Delivery Information</a>
+              <a href="profile.html">Delivery Information</a>
               <a href="#"> Privacy Policy</a>
               <a href="#">Terms & Condition</a>
               <a href="contact.html">Contact Us</a>
         </div>
          <div class="col">
             <h4>My Account</h4>
-            <a href="#">Sign in</a>
+            <a href="login.html">Sign in</a>
               <a href="cart.html">View Cart</a>
-              <a href="#">My Wishlist</a>
-              <a href="#">Track My Order</a>
+              <a href="cart.html">My Wishlist</a>
+              <a href="profile.html">Track My Order</a>
               <a href="contact.html">Help</a>
         </div>
         <div class="col install">
@@ -206,9 +206,16 @@
             <p><i class="fa-regular fa-copyright"></i>2025 STAR. All Rights Reserved. Made with love<i class="fa-solid fa-heart"></i></p>
         </div>
     </section>
+    <section>
+        <div id="add-in-cart">
+          <p>✅</p>
+          <h3>Added</h3>
+        </div>
+    </section>
 </footer>
  <script type="module" src="script.js"></script>
  <script type="module" src="product.js"></script>
  <script type="module" src="popUpScript.js"></script>
+ <script type="module" src="firebase-logics/signUp.js"></script>
 </body>
 </html>

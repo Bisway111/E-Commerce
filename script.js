@@ -1,6 +1,6 @@
 import {setUserRole} from "./firebase-logics/createRole.js";
 import{createProducts} from "./firebase-logics/createProducts.js";
-import { showLoader,hideLoader } from "../popUpScript.js";
+import { showLoader,hideLoader } from "./popUpScript.js";
 const bar = document.querySelector("#bar");
 const nav = document.querySelector("#navbar");
 const cenncel = document.querySelector("#close");

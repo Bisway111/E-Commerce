@@ -27,7 +27,12 @@ export async function getProducts(next = true) {
 
     //Update cursor for pagination
 
-    const docs = snap.docs.map((d)=> d.data());
+    const docs = snap.docs.map((d)=> {
+        const data = d.data();
+        data.id = d.id;
+        return data;
+    });
+    
     if(next && lastVisible){
        pageStack.push(lastVisible);
     }

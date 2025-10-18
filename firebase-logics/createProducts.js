@@ -39,7 +39,7 @@ import {
                 brand: inputs[2].value,
                 category: inputs[3].value,
                 description: inputs[4].value,
-                price: inputs[5].value,
+                price: Number(inputs[5].value),
                 createdAt: serverTimestamp()
             });
          }

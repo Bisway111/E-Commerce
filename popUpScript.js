@@ -83,3 +83,45 @@ export function hideLoader(){
     document.body.style.overflow = "auto";
   }
 }
+
+const congratulations = document.querySelector(".congratulations");
+
+export function congrats(){
+  congratulations.classList.add("active");
+   setTimeout(()=>{
+     congratulations.classList.remove("active");
+    },2000);
+}
+
+export function adding(){
+  const addInCart = document.createElement("div");
+  addInCart.id="add-in-cart";
+  addInCart.innerHTML=`<p>✅</p>
+          <h3>Added</h3>`;
+document.body.appendChild(addInCart);
+addInCart.classList.add("active");
+ setTimeout(()=>{
+     addInCart.classList.remove("active");
+    },2000);
+}
+
+//Making apply coupon btn output
+const applyOut = document.querySelector("#coupon-outPut"); 
+const applyBtn = document.querySelector("#apply-btn");
+if(applyBtn){
+  applyBtn.addEventListener("click",()=>{
+    const applyinput = document.querySelector("#apply-input").value.trim();
+if(applyinput!==""){
+  applyOut.textContent = "Coupon is not valid";
+    setTimeout(()=>{
+      applyOut.textContent = "";
+    },2000);  
+}else{
+  applyOut.textContent = "Enter coupon";
+    setTimeout(()=>{
+      applyOut.textContent = "";
+    },2000);  
+}
+
+ }); 
+}

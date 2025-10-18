@@ -7,7 +7,7 @@ let currentPage = 1;
 
 export async function loadPage(next=true) {
 
-    productContainer.innerHTML= "<p>Loading protucts..<p>";
+   if(productContainer)productContainer.innerHTML= "<p>Loading protucts..<p>";
     const products = await getProducts(next);
 
     if(products.length===0){
@@ -21,7 +21,7 @@ renderProducts(products);
 }
 
 
-function renderProducts(products){
+ function renderProducts(products){
 
     productContainer.innerHTML="";
     products.forEach((p) => {
@@ -42,8 +42,13 @@ function renderProducts(products){
                   </div>
                   <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
         `;
+        
+        div.addEventListener("click",()=>{
+            window.location.href = `sproduct.html?id=${p.id}`;
+        })
         productContainer.appendChild(div);
         
     });
 }
+
 loadPage(true);

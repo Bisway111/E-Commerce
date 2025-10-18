@@ -23,6 +23,7 @@ h1{
  h4{
     font-size: 20px;
     color: #222;
+    
  }
 
 
@@ -913,11 +914,21 @@ font-size:13px ;
     border: 1px solid #e2e9e1;
     border-radius: 4px;
 }
-#cart-add #coupon button,
-#subtotal button{
+#cart-add #coupon button{
     background-color: #088178;
     color:#fff;
     padding: 11px 20px;
+}
+#proceed-check-out{
+    background-color: #034641;
+     color: #9b9696;
+    cursor:not-allowed;
+}
+#proceed-check-out.active{
+    background-color: #088178;
+    color:#fff;
+    padding: 11px 20px;
+    cursor: pointer;
 }
 #subtotal{
     width: 50%;
@@ -1011,6 +1022,7 @@ margin-top: 2rem;
 
 }
 
+
 /* Popup starts from here */
 /* profile popup */
 main{
@@ -1033,12 +1045,15 @@ main{
     visibility: hidden;
     z-index: 1000;
     border-radius: 3px;
+    opacity: 0;
+    transition: visibility 0.3s ease, opacity 0.3s ease;
     
     
     
 }
 #profile-popup.active{
     visibility: visible;
+    opacity: 1;
 }
 #profile-popup .photo-popup{
    display: flex;
@@ -1118,6 +1133,222 @@ main{
 .fa-xmark{
     padding-left: 36vw;
     padding-top: 1vh;
+}
+/* cart place order popUp */
+#check-out-section{
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0,0.6);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+     visibility: hidden; 
+    opacity: 0; 
+    transition: visibility 0.3s ease, opacity 0.3s ease;
+}
+.check-out-box{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border:1px solid #e1e1e1 ;
+    width: 40%;
+    height: auto;
+    position: fixed;
+    background-color: #ffffff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 6px 8px 20px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    
+    
+}
+.check-out-box h2{
+    text-align: center;
+    margin: 2rem 3.5rem;
+
+    font-size: 2rem;
+    color: #088178;
+    text-transform: uppercase;
+}
+.check-out{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content:flex-start;
+    margin-left: 2rem;
+}
+.check-out p{
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #2e7d32;
+}
+#payment-box{
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+#payment-box label{
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: 300;
+}
+#payment-box label input{
+    height: 1rem;
+    width: 1rem;
+}
+
+#card-details{
+    display: flex; 
+    flex-direction: column;
+    align-items: flex-start;
+    overflow: hidden;                
+    max-height: 0;                  
+    opacity: 0;                      
+    transition: max-height 0.5s ease-in, opacity 0.5s ease; 
+   
+}
+#card-details.active{
+   max-height: 300px;            
+    opacity: 1;
+    
+}
+#card-details input{
+    margin-bottom: 1rem;
+    height: 2.5rem;
+    width: 15rem;
+    outline: none;
+    padding-left: 0.5rem;
+    border-radius: 5px;
+    border: 2px solid #e1e1e1 ;
+    font-size: 1rem;
+}
+#upi-details{
+   overflow: hidden;
+   max-height: 0;                   
+   opacity: 0;                      
+   transition: max-height 0.5s ease-in, opacity 0.5s ease;
+}
+#upi-details.active{
+    max-height: 3rem;              
+    opacity: 1;
+}
+#upi-details input{
+     margin-bottom: 1rem;
+    height: 2.5rem;
+    width: 15rem;
+    outline: none;
+    padding-left: 0.5rem;
+    border-radius: 5px;
+    border: 2px solid #e1e1e1 ;
+    font-size: 1rem;
+}
+.button-check-out{
+    
+     width: 100%;
+     display: flex;
+     justify-content: space-evenly;
+     margin-top: 2rem;
+     margin-bottom: 2rem;
+     
+}
+#place-check-out{
+     background-color: #034641;
+     color: #9b9696;
+     cursor: not-allowed;
+}
+#cencel-check-out{
+    
+    background-color: #e5e5e5;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+#cencel-check-out:hover{
+   background-color: #f5f3f3;
+   opacity: 1; 
+}
+#place-check-out.active{
+    background-color: #088178;
+    color: #fff;
+    cursor: pointer;
+}
+#check-out-section.active{
+ visibility: visible;
+  opacity: 1;
+}
+/* congratulations popup */
+
+.congratulations{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border:1px solid #e1e1e1 ;
+    width: 30%;
+    height: 20%;
+    position: fixed;
+    background-color: #ffffff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 6px 8px 20px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 40px;
+    visibility: hidden; 
+    opacity: 0; 
+    
+
+}
+.congratulations.active{
+    visibility: visible;
+    opacity: 1;
+}
+
+.congratulations p{
+    font-size: 5rem;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.congratulations h3{
+    color: #2e7d32;
+    font-family: serif;
+}
+/* add to cart pop up */
+#add-in-cart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:1px solid #e1e1e1 ;
+    width: 20%;
+    height: 8%;
+    position: fixed;
+    background-color: #ffffff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 6px 8px 20px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    visibility: hidden;
+    opacity: 0;
+}
+#add-in-cart p{
+    padding-right: 0.5rem;
+    margin: 0;
+    font-size: 2rem;
+}
+#add-in-cart h3{
+    font-size: 1.5rem;
+     color: #2e7d32;
+    font-family: serif;
+}
+#add-in-cart.active{
+ visibility: visible;
+ opacity: 1;
 }
 /* New Adds  */
 /* add product */
@@ -1267,7 +1498,138 @@ border-right:none;
     background-color: #088178;
     color: #fff;
 }
+/* profile order page for users */
+.order-div-product-inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+#product-progress{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 
+}
+#product-progress span{
+    width: 0.7rem;
+    height: 0.7rem;
+    border: 1px solid #32d032;
+    border-radius: 50%;
+    background-color: #32d032;
+    box-shadow: 0 0 5px 2px #85de17e3;
+}
+#product-progress p{
+    margin: 0;
+    padding-left: 0.5rem;
+    font-size: 0.9rem;
+
+}
+.inner-orders h3{
+    padding-left: 0.7rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
+#order-date{
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
+#add-div-product hr{
+   background-color:#ccc ;
+}
+/* order page start */
+.order-section{
+    width: 100%;
+    height: auto;
+    border: 1px solid #e1e1e1;
+    background-color: #ffffff;
+    box-shadow: 0px 1px 20px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    font-style: italic;
+}
+#order-page{
+margin: 1rem;
+
+}
+#progess-date{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.order{
+    margin-bottom: 1rem;
+}
+.order img{
+width: 10rem;
+height: 10rem;
+border-radius: 5px;
+border: 2px solid #e1e1e1;
+box-shadow: 0px 1px 20px 2px rgba(0, 0, 0, 0.2);
+margin-bottom: 1rem;
+}
+
+.order h3{
+    font-size: 1rem;
+    font-weight: 500;
+    padding-bottom: 0.5rem;
+}
+.order h3:nth-child(6){
+    line-height: 1.5rem;
+}
+#invoice{
+   margin: 1rem;
+   font-style: normal;
+}
+#invoice h4{
+    text-align: center;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+#customer-details h3{
+    text-align: end;
+    font-size: 1rem;
+    font-weight: 500;
+    padding-bottom: 0.2rem;
+}
+#invoice table  {
+     text-align:center;
+    width: 100%; 
+   
+}
+#invoice table th,td{
+    text-align: center;
+    vertical-align: middle;
+    padding: 0.7rem;
+}
+#invoice table thead th {
+    border: 1px solid #e2e9e1;
+    border-left: none;
+    border-right:none;
+    font-size: 0.88rem;
+    font-weight: 575;
+    text-transform: uppercase;
+}
+#invoice table{
+    border: 1px solid #e2e9e1;
+    border-left: none;
+    border-right:none;
+    border-top: none;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    
+}
+#total-value{
+    text-align: end;
+    margin-right: 9rem;
+    font-style: italic;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
 /* Loader */
 .loader-overlay{
     position: fixed;
