@@ -91,7 +91,7 @@ font-weight: 500;
 
 }
 .login-with div h4{
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 500;
 }
 .login-other a{
@@ -115,6 +115,6 @@ font-weight: 500;
     width: 85%;  
 }
 .login-with div h4{
-    font-size: 14px;
+    font-size: 0.8rem;
 }
 }
