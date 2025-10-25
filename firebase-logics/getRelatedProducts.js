@@ -32,7 +32,7 @@ export async function getRelatedProducts(category,excludeId) {
 export async function getSmallProducts(category){
     if(!category)return [];
 
-    const q = query(collection(db,"products"),where("category","==",category),limit(4));
+    const q = query(collection(db,"products"),where("category","==",category),limit(5));
     const snap = await getDocs(q);
 
     return snap;

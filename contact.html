@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contact Us/EUROCLOTH</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -14,7 +14,7 @@
     <div>
         <ul id="navbar">
             <li><a  href="index.html">Home</a></li>
-            <li><a href="shope.html">Shope</a></li>
+            <li><a href="shope.html">Shop</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="about.html">About</a></li>
             <li><a class="active" href="contact.html">Contact</a></li>
@@ -70,15 +70,15 @@
 
    </section>
     <section id ="form-details">
-     <form action="">
+     <div id="contact-div">
         <span>LEAVE A MESSAGE</span>
         <h2>We love to hear from you</h2>
-        <input type="text" placeholder="Your Name">
-        <input type="email" placeholder="E-mail">
-        <input type="text" placeholder="Subject">
-        <textarea name="" id="" cols="30" rows="10" placeholder="Subject"></textarea>
-         <button class="normal">Submit</button>
-    </form>
+        <input type="text" placeholder="Your Name" id="contact-name">
+        <input type="email" placeholder="E-mail" id="contact-email">
+        <input type="text" placeholder="Subject" id="contact-sub">
+        <textarea name="" cols="30" rows="10" placeholder="Detail" id="contact-detail"></textarea>
+         <button class="normal" type="submit" id="contact-button">Submit</button>
+     </div>
 <div class="people">
     <div>
         <img src="IMAGE/people/1.png" alt="">
@@ -134,8 +134,8 @@
             <h4>About</h4>
             <a href="about">About Us</a>
               <a href="profile.html">Delivery Information</a>
-              <a href="#"> Privacy Policy</a>
-              <a href="#">Terms & Condition</a>
+              <a href="privacy.html"> Privacy Policy</a>
+              <a href="condition.html">Terms & Condition</a>
               <a href="contact.html">Contact Us</a>
         </div>
          <div class="col">
@@ -165,5 +165,6 @@
  <script type="module" src="product.js"></script>
   <script type="module" src="popUpScript.js"></script>
   <script type="module" src="firebase-logics/signUp.js"></script>
+  <script type="module" src="firebase-logics/crud.js"></script>
 </body>
 </html>

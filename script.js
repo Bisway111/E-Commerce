@@ -59,7 +59,7 @@ if(addRow){
                             <td><input type="text" placeholder="Enter Product Name"></td>
                             <td><input type="text" placeholder="Enter Brand Name"></td>
                             <td><input type="text" placeholder="Enter Category"></td>
-                            <td><input type="feild" placeholder="Enter Discription" ></td>
+                            <td><input type="feild" placeholder="Enter Description" ></td>
                             <td><input type="number" placeholder="Enter Price"></td>` ;
 
          //Adjust the height after a row added
@@ -98,9 +98,7 @@ if(addProduct){
         const rows = document.querySelectorAll("#product-table tbody tr");
         try{
             if(rows.length!==0){
-                console.log("add Product");
                   const result =  await createProducts(rows);
-                  console.log(result);
                   alert(result);
                   hideLoader();
                   document.body.style.overflow = "auto";
@@ -151,3 +149,6 @@ if(addAdmin){
         
     })
 }
+
+//contact 
+

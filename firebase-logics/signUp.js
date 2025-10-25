@@ -59,7 +59,7 @@ alert(`✅ Sign up: ${name}`);
     hideLoader();
     document.body.style.overflow = "auto";
   alert(`❌ Error: ${error.message}`);
-  console.log("Error"+error.message)
+  
   
   }
     })
@@ -74,7 +74,6 @@ if(googleAuth){
     try{
       const result = await signInWithPopup(auth,googleAuthProvider);
       const user = result.user;
-      console.log("Google login"+user);
       alert("✅ Login with Google, "+user.displayName);
       const userref = doc(db,"users",user.uid);
       const userdata = await getDoc(userref);
@@ -112,15 +111,12 @@ if(googleAuth){
   e.preventDefault();
   showLoader();
   document.body.style.overflow = "hidden";
-
-  console.log()
     const email = document.querySelector("#login-details-email").value;
     const password = document.querySelector("#login-details-password").value;
 
     signInWithEmailAndPassword(auth,email,password)
     .then((userCredential)=>{
       alert(`✅ Logged In :${userCredential.user.email}`);
-      console.log(`✅ Logged In :${userCredential.user.email}`);
       logIn.reset();
       hideLoader();
       document.body.style.overflow = "auto";
@@ -130,7 +126,6 @@ if(googleAuth){
       alert(`❌ Error: ${error.message}`)
       hideLoader();
       document.body.style.overflow = "auto";
-      console.log("Error");
     })
     
 

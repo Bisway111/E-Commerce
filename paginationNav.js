@@ -9,7 +9,7 @@ if(nextBtn){
 nextBtn.addEventListener("click",async()=>{
     if(hasNext){
         currentPage++;
-        await loadPage(true);
+        await loadPage(true,currentPage);
     }
 });
 }
@@ -18,7 +18,7 @@ if(prevBtn){
 prevBtn.addEventListener("click",async()=>{
     if(currentPage>1){
         currentPage--;
-        await loadPage(false);
+        await loadPage(false,currentPage);
 
     }
 });

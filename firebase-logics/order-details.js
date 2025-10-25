@@ -49,7 +49,7 @@ authStateListener(async(user)=>{
                 </div>`
     order.items.forEach((p) => {
         orderPage.innerHTML +=` <div class="order">
-                    <img src="${p.image}" alt="${p.name}">
+                    <div class="order-image" style="background-image:url(${p.image});"></div>
                     <h3>${p.brand}</h3>
                     <h3>${p.name}</h3>
                     <h3>price-$${p.price}</h3>

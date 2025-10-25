@@ -63,11 +63,11 @@ function renderCart(items){
        const row = document.createElement("tr");
        row.innerHTML=`
        <td><i class="fa-regular fa-circle-xmark remove" style=" color:rgba(255, 0, 0, 0.6); cursor: pointer;" data-id="${item.id}"></i></td>
-      <td><img src="${item.image}" alt="${item.name}" width="50"></td>
-      <td>${item.name}</td>
-      <td>$${Number(item.price).toFixed(2)}</td>
-      <td><input type="number" min="1" value="${item.quantity}" class="qty-input" data-id="${item.id}"></td>
-      <td>$${itemSubtotal.toFixed(2)}</td>
+       <td><div class="cart-row-img" style="background-image:url(${item.image});"></div></td>
+       <td>${item.name}</td>
+       <td>$${Number(item.price).toFixed(2)}</td>
+       <td><input type="number" min="1" value="${item.quantity}" class="qty-input" data-id="${item.id}"></td>
+       <td>$${itemSubtotal.toFixed(2)}</td>
        `
        cartTableBody.appendChild(row);
 

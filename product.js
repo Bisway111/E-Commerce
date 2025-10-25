@@ -4,8 +4,8 @@ import { showLoader,hideLoader, adding } from "./popUpScript.js";
 
 const productContainer = document.querySelector(".pro-container");
 const featureProductName = document.querySelector("#featured-product-category");
-const mainImg = document.querySelector("#MainImg");
-const smallImg = document.querySelectorAll(".small-img-col img");
+const mainImg = document.querySelector("#big-img");
+const smallImg = document.querySelectorAll(".small-img-col");
 const category = document.querySelector(".single-pro-deatils h6");
 const brandName = document.querySelector(".single-pro-deatils #brandName");
 const productName = document.querySelector(".single-pro-deatils h4");
@@ -18,7 +18,8 @@ const description = document.querySelector(".single-pro-deatils #descriptions");
 //adding small img to main img when click
 smallImg.forEach((img)=>{
     img.addEventListener("click",()=>{
-    mainImg.src = img.src;
+    const style = window.getComputedStyle(img);
+     mainImg.style.backgroundImage = style.backgroundImage;
 })
 })
 
@@ -49,7 +50,7 @@ window.addEventListener("DOMContentLoaded",async()=>{
 
    //const storedIMG = localStorage.getItem("SelectImg");// Use it when wants to use browsers storage
 try{
-  const fistSImg = document.querySelector(".small-img-col img");
+  const fistSImg = document.querySelector(".small-img-col:nth-child(1)");
   const param = new URLSearchParams(window.location.search);//Use it when wants to use URL path to get data (It's called Query Parameter)
   const id = param.get("id");
   if(id){ 
@@ -58,18 +59,15 @@ try{
    if(product){ 
     const data = product.data();
     if(data){
-    mainImg.src = data.image;
-    fistSImg.src =  data.image ;
+    mainImg.style.backgroundImage = `url("${data.image}")`;
+    fistSImg.style.backgroundImage = `url("${data.image}")`;
     brandName.textContent = data.brand;
     productName.textContent = data.productName;
     category.textContent = data.category;
     price.textContent = `$${data.price}`;
     description.textContent = data.description;
     if(data.category!=="")featureProductName.textContent = data.category;
-    console.log("Hello from product-",data.category);
-   
-   console.log("Hello from product-");
-   console.log("Hello from product-",data.category);
+
 
    if(data.category!=="") {
     const loadRelatedProducts = await getSmallProducts(data.category);
@@ -83,7 +81,7 @@ try{
    }
     }
    }catch(error){
-    console.log(error);
+    
     alert(error);
     }
 });
@@ -93,10 +91,9 @@ function renderProducts(products){
     products.forEach((p) => {
         const div = document.createElement("div");
         div.classList.add("pro");
-        div.innerHTML=`
-        <img src="${p.image}" alt="${p.productName}">
+        div.innerHTML=`<div class="div-img" style="background-image:url(${p.image});"></div>
                   <div class="des">
-                     <span>${p.brand}</span>
+                     <span>${p.brand || "Unknown"}</span>
                      <h5>${p.productName}</h5>
                         <div class="star">
                             <i class="fas fa-star"></i>
@@ -106,8 +103,7 @@ function renderProducts(products){
                         </div>
                         <h4>$${p.price}</h4>
                   </div>
-                  <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
-        `;
+                  <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>`;
         div.addEventListener("click",()=>{
             window.location.href = `sproduct.html?id=${p.id}`;
         })
@@ -121,7 +117,7 @@ function renderSmallProdusts( products,id){
     products.forEach((doc)=>{
         if(doc.id !== id && i<4){
             const data = doc.data();
-            smallImg[i].src = data.image[0];
+            smallImg[i].style.backgroundImage = `url("${data.image}")`;
             smallImg[i].addEventListener("click",()=>{
                 window.location.href = `sproduct.html?id=${doc.id}`; 
             });

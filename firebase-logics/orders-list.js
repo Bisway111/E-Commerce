@@ -13,9 +13,10 @@ const orderContainer = document.querySelector("#add-div-product");
 
     const orderRef = query(collection(db, "users", user.uid, "orders"),orderBy("orderDate","desc"));
     const snapShot = await getDocs(orderRef);
-    // if(snapShot.empty()){
-    //     orderContainer.innerHTML = "No product found..";
-    // }
+    if(snapShot.empty){
+        orderContainer.innerHTML = "No product found..";
+        return;
+    }
 
     orderContainer.innerHTML = "";//clear static html;
 

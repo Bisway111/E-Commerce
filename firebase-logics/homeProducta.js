@@ -49,7 +49,7 @@ function renderProducts(container, products){
         
         const productDiv = document.createElement("div");
         productDiv.classList.add("pro");
-        productDiv.innerHTML=`<img src="${p.image}" alt="${p.name}">
+        productDiv.innerHTML=`<div class="div-img" style="background-image:url(${p.image});"></div>
                   <div class="des">
                      <span>${p.brand || "Unknown"}</span>
                      <h5>${p.name}</h5>

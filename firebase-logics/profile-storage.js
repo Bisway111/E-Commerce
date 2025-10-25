@@ -18,7 +18,7 @@ try{
    await updateDoc(userref,{
     profileImage: url
    })
-console.log("upload "+url);
+
    return url;
  }
 
@@ -40,7 +40,7 @@ throw new Error("Not log in");
          const storageRef = ref(storage,`profilePicture/${id}/profile.jpg`) ;
          if(storageRef.exists()){
 await deleteObject(storageRef);
-         console.log("Image deleted from storage!");
+         
          }else{
             return;
          }

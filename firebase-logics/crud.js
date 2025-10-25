@@ -4,7 +4,9 @@ import {
     serverTimestamp,
     getDoc,
     updateDoc,
-    deleteDoc 
+    deleteDoc,
+    addDoc,
+    collection
 
   } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-firestore.js";
 import{deleteUser,reauthenticateWithCredential,EmailAuthProvider} from "https://www.gstatic.com/firebasejs/12.3.0/firebase-auth.js";
@@ -54,7 +56,6 @@ if(user){
       return null;
     }
   }catch(error){
-    console.log(error);
     return null;
   }
 }
@@ -191,3 +192,45 @@ throw error;
   
 }
 
+//contact 
+
+const contactbtn = document.querySelector("#contact-button");
+if(contactbtn){
+contactbtn.addEventListener("click", async () => {
+    const contactSubInput = document.querySelector("#contact-sub");
+    const contactNameInput = document.querySelector("#contact-name");
+    const contactEmailInput = document.querySelector("#contact-email");
+    const contactDetailsInput = document.querySelector("#contact-detail");
+
+    const contactsub = contactSubInput.value.trim();
+    const contactName = contactNameInput.value.trim();
+    const contactEmail = contactEmailInput.value.trim();
+    const contactDetails = contactDetailsInput.value.trim();
+
+    if (contactsub && contactName && contactEmail && contactDetails) {
+        try {
+            const contactRef = collection(db, "contacts");
+          const result=  await addDoc(contactRef, {
+                name: contactName,
+                email: contactEmail,
+                subject: contactsub,
+                detail: contactDetails,
+                timestamp: new Date()
+            });
+            
+            alert(`Hello ${contactName}, we will contact you soon at ${contactEmail}!`);
+            
+            contactSubInput.value = "";
+            contactNameInput.value = "";
+            contactEmailInput.value = "";
+            contactDetailsInput.value = "";
+
+        } catch (error) {
+            console.error("Error adding contact:", error);
+            alert("Failed to send your message. Check console for errors.");
+        }
+    } else {
+        alert("Fill the full form");
+    }
+});
+}
