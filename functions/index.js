@@ -106,7 +106,7 @@ const transporter = nodemailer.createTransport({
         </p>
 
         <div style="text-align: center; margin: 30px 0;">
-          <a href="https://eurocloth.com" 
+          <a href="https://myeurocloth.shop/" 
              style="background-color: #00adb5; color: white; padding: 12px 28px; text-decoration: none; border-radius: 6px; font-weight: 600;">
              Start Shopping
           </a>
@@ -120,7 +120,7 @@ const transporter = nodemailer.createTransport({
       <!-- Footer -->
       <div style="background-color: #eeeeee; text-align: center; padding: 15px; font-size: 13px; color: #777;">
         © ${new Date().getFullYear()} EUROCLOTH. All rights reserved.<br>
-        <a href="https://eurocloth.com" style="color: #00adb5; text-decoration: none;">Visit our website</a>
+        <a href="https://myeurocloth.shop/" style="color: #00adb5; text-decoration: none;">Visit our website</a>
       </div>
 
     </div>
@@ -174,7 +174,7 @@ const transporter = nodemailer.createTransport({
         </p>
 
         <div style="text-align: center; margin: 30px 0;">
-          <a href="https://eurocloth.com/orders" 
+          <a href="https://myeurocloth.shop/profile.html" 
              style="background-color: #00adb5; color: white; padding: 12px 28px; text-decoration: none; border-radius: 6px; font-weight: 600;">
              View My Order
           </a>
@@ -188,7 +188,7 @@ const transporter = nodemailer.createTransport({
       <!-- Footer -->
       <div style="background-color: #eeeeee; text-align: center; padding: 15px; font-size: 13px; color: #777;">
         © ${new Date().getFullYear()} EUROCLOTH. All rights reserved.<br>
-        <a href="https://eurocloth.com" style="color: #00adb5; text-decoration: none;">Visit our website</a>
+        <a href="https://myeurocloth.shop/" style="color: #00adb5; text-decoration: none;">Visit our website</a>
       </div>
 
     </div>
@@ -244,7 +244,7 @@ const transporter = nodemailer.createTransport({
         </p>
 
         <div style="text-align: center; margin: 30px 0;">
-          <a href="https://" 
+          <a href="https://myeurocloth.shop/" 
              style="background-color: #00adb5; color: white; padding: 12px 28px; text-decoration: none; border-radius: 6px; font-weight: 600;">
              Visit Help Center
           </a>
@@ -259,7 +259,7 @@ const transporter = nodemailer.createTransport({
       <!-- Footer -->
       <div style="background-color: #eeeeee; text-align: center; padding: 15px; font-size: 13px; color: #777;">
         © ${new Date().getFullYear()} EUROCLOTH. All rights reserved.<br>
-        <a href="https://eurocloth.com" style="color: #00adb5; text-decoration: none;">Visit our website</a>
+        <a href="https://myeurocloth.shop/" style="color: #00adb5; text-decoration: none;">Visit our website</a>
       </div>
 
     </div>
