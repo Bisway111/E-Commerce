@@ -28,7 +28,7 @@ authStateListener(async(user)=>{
         cartTableBody.innerHTML=`
         <tr>
            <td colspan = "6" style=" text-align:center; padding:20px; font-size:18px;">
-           🔒 Please <a href="Login.html" style="color:blue; text-decoration: none;">log in<a> to view your cart.
+           🔒 Please <a href="login.html" style="color:blue; text-decoration: none;">log in<a> to view your cart.
            <td>
         <tr>`;
         proceedCheckOutBtn.disabled = true;
