@@ -1,6 +1,6 @@
-# 🛍️ Eurocloth – Modern E-Commerce Website
+# 🛍️ EUROCLOTH – Modern E-Commerce Website
 
-Eurocloth is a fully functional e-commerce web application designed for online clothing shopping. It provides users with a seamless shopping experience with features like product browsing, cart management, secure checkout, and responsive UI.
+EUROCLOTH is a fully functional e-commerce web application designed for online clothing shopping. It provides users with a seamless shopping experience with features like product browsing, cart management, secure checkout, and responsive UI.
 
 ---
 
@@ -11,7 +11,7 @@ Eurocloth is a fully functional e-commerce web application designed for online c
 - 👤 **User Authentication** – Secure login and signup using Firebase Authentication.  
 - 💳 **Checkout System** – Streamlined checkout with order confirmation.  
 - 📱 **Responsive Design** – Fully responsive layout for mobile, tablet, and desktop.  
-- 🔐 **Admin Panel (Optional)** – Manage products, categories, and orders easily.  
+- 🔐 **Admin Panel** – Manage products, categories, and orders easily.  
 - 📨 **Contact Form** – Customers can contact via email or message form.  
 
 ---
@@ -33,5 +33,6 @@ Eurocloth is a fully functional e-commerce web application designed for online c
 - VS Code for development  
 
 Author - Bisway Singha 
+<br>
 Live project link - <a>https://myeurocloth.shop/</a>
 
