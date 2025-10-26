@@ -32,5 +32,6 @@ Eurocloth is a fully functional e-commerce web application designed for online c
 - Git & GitHub for version control  
 - VS Code for development  
 
----
+Author - Bisway Singha 
+Live project link - <a>https://myeurocloth.shop/</a>
 
